@@ -18,7 +18,7 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
     private TextView contentText;
     private TextView scalingText;
 
-    private static final int CONTENT_DESC_MAX_LINE = 2;// 默认展示最大行数3行
+    private static final int CONTENT_DESC_MAX_LINE = 3;// 默认展示最大行数3行
     private static final int SHRINK_UP_STATE = 1;// 收起状态
     private static final int SPREAD_STATE = 2;// 展开状态
     private int mState;
@@ -59,7 +59,6 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
                     putAway();
                 } else {
                     scalingText.setVisibility(GONE);
-                    unFold();
                 }
             }
         });
