@@ -14,5 +14,6 @@ public class MainActivity extends AppCompatActivity {
         expandableTextView = (ExpandableTextView) findViewById(R.id.expand);
 
         expandableTextView.setText("发色纺纱的方式的方式的方式的方式的发色纺纱的方式的方式的方式的方式的发色纺纱的方式的发色纺纱的方式的的方式的");
+        expandableTextView.setShowUpFoldBtn(true);
     }
 }

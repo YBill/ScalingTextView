@@ -23,6 +23,8 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
     private static final int SPREAD_STATE = 2;// 展开状态
     private int mState;
 
+    private boolean isShowUnFoldBtn = false;
+
     public ExpandableTextView(Context context) {
         super(context);
         init(context);
@@ -72,6 +74,10 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
         contentText.setTextColor(context.getResources().getColor(id));
     }
 
+    public void setShowUpFoldBtn(boolean show) {
+        this.isShowUnFoldBtn = show;
+    }
+
     /**
      * 收起
      */
@@ -88,7 +94,12 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
     private void unFold() {
         contentText.setMaxLines(Integer.MAX_VALUE);
         contentText.requestLayout();
-        scalingText.setText("收起");
+        if (isShowUnFoldBtn) {
+            scalingText.setText("收起");
+            scalingText.setVisibility(VISIBLE);
+        } else {
+            scalingText.setVisibility(GONE);
+        }
         mState = SPREAD_STATE;
     }
 
